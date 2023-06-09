@@ -1,11 +1,12 @@
 import './App.css'
+import Router from './router/Router'
 
 function App() {
-  return (
-    <>
-    Hello world
-    </>
-  )
+    return (
+        <>
+            <Router />
+        </>
+    )
 }
 
 export default App
