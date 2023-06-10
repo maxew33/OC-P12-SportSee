@@ -10,7 +10,7 @@ export default function Router() {
             element: <Logging />,
         },
         {
-            path: '/dashboard/:id',
+            path: '/dashboard/:src/:id',
             element: <Dashboard />,
         },
         {

@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react'
 export default function Dashboard() {
     interface dataFormat {
         userData: {
-            data: {
                 id: number
                 userInfos: {
                     firstName: string
@@ -19,69 +18,68 @@ export default function Dashboard() {
                     carbohydrateCount: number
                     lipidCount: number
                 }
-            }
+            
         }
 
         userActivity: {
-            data: {
-                userId: number
-                sessions: {
-                    day: string
-                    kilogram: number
-                    calories: number
-                }[]
-            }
+            userId: number
+            sessions: {
+                day: string
+                kilogram: number
+                calories: number
+            }[]
         }
 
         userSessions: {
-            data: {
-                userId: number
-                sessions: {
-                    day: number
-                    sessionLength: number
-                }[]
-            }
+            userId: number
+            sessions: {
+                day: number
+                sessionLength: number
+            }[]
         }
 
         userPerformance: {
-            data: {
-                userId: number
-                kind: {
-                    [key: number]: string
-                }
-                data: {
-                    value: number
-                    kind: number
-                }[]
+            userId: number
+            kind: {
+                [key: number]: string
             }
+            data: {
+                value: number
+                kind: number
+            }[]
         }
     }
 
     const [data, setData] = useState<dataFormat | null>(null)
 
-    const { userInfos, todayScore, keyData } = data?.userData?.data || {}
+    const { userInfos, todayScore, keyData } = data?.userData|| {}
 
     const { firstName, lastName, age } = userInfos || {}
 
     const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
         keyData || {}
 
-    const { sessions: activitySession } = data?.userActivity?.data || {}
+    const { sessions: activitySession } = data?.userActivity || {}
 
-    const { sessions } = data?.userSessions?.data || {}
+    const { sessions } = data?.userSessions || {}
 
     const navigate = useNavigate()
+
+    /* todo performance */
 
     // Get the parameter from the URL
     const params = useParams()
 
     const userId = params.id
 
+    const dataSrc = params.src
+
     useEffect(() => {
         const fetchData = async () => {
-            if (userId) {
-                const formattedData = await Format(userId)
-                console.log(formattedData)
+            if (userId && dataSrc) {
+                console.log('toto')
+                const formattedData = await Format(dataSrc, userId)
+                console.log('formattedData', formattedData)
 
                 !formattedData && navigate('/error')
                 setData(formattedData)
@@ -89,9 +87,9 @@ export default function Dashboard() {
         }
 
         fetchData()
-    }, [userId])
+    }, [])
 
-    console.log(data)
+    console.log(123, data)
 
     return (
         <div>

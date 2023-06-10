@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Logging() {
     const [inputId, setInputId] = useState('')
+    const [onDevelopment, setOnDevelopment] = useState(true)
 
     const navigate = useNavigate()
 
@@ -13,7 +14,11 @@ export default function Logging() {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault()
-        navigate('dashboard/' + inputId)
+        navigate(`dashboard/${onDevelopment ? 'mock' : 'api'}/${inputId}`)
+    }
+
+    const onDevelopmentChange = () => {
+        setOnDevelopment(!onDevelopment)
     }
 
     return (
@@ -26,6 +31,15 @@ export default function Logging() {
                     onInput={(e) => changeInput(e)}
                 />
             </label>
+            <label>
+            <input
+              type="checkbox"
+              value="en développement"
+              checked={onDevelopment}
+              onChange={onDevelopmentChange}
+            />
+            en développement
+          </label>
 
             <button type="submit">envoyer</button>
         </form>
