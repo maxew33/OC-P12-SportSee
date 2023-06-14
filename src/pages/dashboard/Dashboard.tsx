@@ -1,24 +1,29 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import Format from '../../format/format'
+import Format from '../../Switch/switch'
 import { useEffect, useState } from 'react'
+import NavBarHor from '../../components/navbarHor/NavBarHor'
+import NavBarVert from '../../components/navbarVert/NavBarVert'
+import ActivityChart from '../../components/charts/activity/ActivityChart'
+import MainChart from '../../components/charts/main/MainChart'
+import PerformanceChart from '../../components/charts/performance/PerformanceChart'
+import SessionsChart from '../../components/charts/sessions/SessionsChart'
 
 export default function Dashboard() {
     interface dataFormat {
         userData: {
-                id: number
-                userInfos: {
-                    firstName: string
-                    lastName: string
-                    age: number
-                }
-                todayScore: number
-                keyData: {
-                    calorieCount: number
-                    proteinCount: number
-                    carbohydrateCount: number
-                    lipidCount: number
-                }
-            
+            id: number
+            userInfos: {
+                firstName: string
+                lastName: string
+                age: number
+            }
+            todayScore: number
+            keyData: {
+                calorieCount: number
+                proteinCount: number
+                carbohydrateCount: number
+                lipidCount: number
+            }
         }
 
         userActivity: {
@@ -52,7 +57,7 @@ export default function Dashboard() {
 
     const [data, setData] = useState<dataFormat | null>(null)
 
-    const { userInfos, todayScore, keyData } = data?.userData|| {}
+    const { userInfos, todayScore, keyData } = data?.userData || {}
 
     const { firstName, lastName, age } = userInfos || {}
 
@@ -89,14 +94,22 @@ export default function Dashboard() {
         fetchData()
     }, [])
 
-    console.log(123, data)
+    console.log(123, data, activitySession)
 
     return (
-        <div>
-            dashboard - {firstName} - {calorieCount} -
-            {activitySession?.map((elt, idx) => {
-                return <div key={idx}>{elt.kilogram} kg</div>
-            })}
-        </div>
+        <>
+            <NavBarHor />
+            <NavBarVert />
+            <div>
+            <ActivityChart sessions={activitySession} />
+                <MainChart />
+                <PerformanceChart />
+                <SessionsChart />
+                dashboard - {firstName} - {calorieCount} -
+                {activitySession?.map((elt, idx) => {
+                    return <div key={idx}>{elt.kilogram} kg / {elt.calories} cal</div>
+                })}
+            </div>
+        </>
     )
 }
