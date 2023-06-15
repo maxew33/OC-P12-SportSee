@@ -1,7 +1,17 @@
 import React from 'react'
+import {
+    XAxis,
+    YAxis,
+    Tooltip,
+    Legend,
+    Bar,
+    CartesianGrid,
+    BarChart,
+    ResponsiveContainer,
+} from 'recharts'
 
 interface ActivityChartProps {
-    sessions?: {
+    data?: {
         day: string
         kilogram: number
         calories: number
@@ -9,22 +19,34 @@ interface ActivityChartProps {
 }
 
 export default function ActivityChart(props: ActivityChartProps) {
-    const { sessions } = props
+    const { data } = props
 
-    console.log(sessions)
+    console.log("activity chart", data)
 
     return (
-        <div>
+        <>
             ActivityChart
-            <br />
-            {sessions?.map((elt, idx) => {
-                return (
-                    <div key={idx}>
-                        <h1>ACTIVITY</h1>
-                        {elt.kilogram} kg / {elt.calories} cal
-                    </div>
-                )
-            })}
-        </div>
+            {/* <ResponsiveContainer width="100%" height="100%"> */}
+                <BarChart width={835} height={320} data={data}>
+                    <CartesianGrid strokeDasharray="3 3" verticalPoints={[0]}/>
+                    <XAxis dataKey="name" />
+                    <YAxis
+                        yAxisId="right"
+                        orientation="right"
+                        stroke="#000"
+                    />
+                    <YAxis
+                        yAxisId="left"
+                        orientation="left"
+                        stroke="#000000ff"
+                        hide
+                    />
+                    <Tooltip />
+                    <Legend />
+                    <Bar yAxisId="right" dataKey="kilogram" fill="#000000" />
+                    <Bar yAxisId="left" dataKey="calories" fill="#E60000" />
+                </BarChart>
+            {/* </ResponsiveContainer> */}
+        </>
     )
 }

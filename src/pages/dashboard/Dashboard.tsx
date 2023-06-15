@@ -1,5 +1,4 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import Format from '../../Switch/switch'
 import { useEffect, useState } from 'react'
 import NavBarHor from '../../components/navbarHor/NavBarHor'
 import NavBarVert from '../../components/navbarVert/NavBarVert'
@@ -7,6 +6,7 @@ import ActivityChart from '../../components/charts/activity/ActivityChart'
 import MainChart from '../../components/charts/main/MainChart'
 import PerformanceChart from '../../components/charts/performance/PerformanceChart'
 import SessionsChart from '../../components/charts/sessions/SessionsChart'
+import Models from '../../models/models'
 
 export default function Dashboard() {
     interface dataFormat {
@@ -82,8 +82,8 @@ export default function Dashboard() {
     useEffect(() => {
         const fetchData = async () => {
             if (userId && dataSrc) {
-                console.log('toto')
-                const formattedData = await Format(dataSrc, userId)
+                console.log('data fetch')
+                const formattedData = await Models(dataSrc, userId)
                 console.log('formattedData', formattedData)
 
                 !formattedData && navigate('/error')
@@ -94,22 +94,21 @@ export default function Dashboard() {
         fetchData()
     }, [])
 
-    console.log(123, data, activitySession)
+    console.log('data', data)
 
     return (
         <>
-            <NavBarHor />
-            <NavBarVert />
-            <div>
-            <ActivityChart sessions={activitySession} />
-                <MainChart />
-                <PerformanceChart />
-                <SessionsChart />
-                dashboard - {firstName} - {calorieCount} -
-                {activitySession?.map((elt, idx) => {
-                    return <div key={idx}>{elt.kilogram} kg / {elt.calories} cal</div>
-                })}
-            </div>
+            {data && (
+                <div>
+                    <h1> dashboard - Bienvenue {firstName}</h1>
+                    <ActivityChart data={activitySession} />
+                    <MainChart />
+                    <PerformanceChart />
+                    <SessionsChart data={sessions}/>
+                    <NavBarHor />
+                    <NavBarVert />
+                </div>
+            )}
         </>
     )
 }
