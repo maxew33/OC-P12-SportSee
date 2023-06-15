@@ -27,32 +27,23 @@ export default function Dashboard() {
         }
 
         userActivity: {
-            userId: number
-            sessions: {
                 day: string
                 kilogram: number
                 calories: number
             }[]
-        }
+        
 
         userSessions: {
-            userId: number
-            sessions: {
                 day: number
                 sessionLength: number
             }[]
-        }
+        
 
         userPerformance: {
-            userId: number
-            kind: {
-                [key: number]: string
-            }
-            data: {
                 value: number
-                kind: number
+                kind: string
             }[]
-        }
+        
     }
 
     const [data, setData] = useState<dataFormat | null>(null)
@@ -64,9 +55,11 @@ export default function Dashboard() {
     const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
         keyData || {}
 
-    const { sessions: activitySession } = data?.userActivity || {}
+    const activitySession = data?.userActivity || []
 
-    const { sessions } = data?.userSessions || {}
+    const sessions = data?.userSessions || []
+
+    const performance = data?.userPerformance|| []
 
     const navigate = useNavigate()
 
@@ -103,7 +96,7 @@ export default function Dashboard() {
                     <h1> dashboard - Bienvenue {firstName}</h1>
                     <ActivityChart data={activitySession} />
                     <MainChart />
-                    <PerformanceChart />
+                    <PerformanceChart data={performance} />
                     <SessionsChart data={sessions}/>
                     <NavBarHor />
                     <NavBarVert />
