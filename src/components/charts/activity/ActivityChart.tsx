@@ -21,8 +21,6 @@ interface ActivityChartProps {
 export default function ActivityChart(props: ActivityChartProps) {
     const { data } = props
 
-    console.log('activity chart', data)
-
     return (
         <>
             Activité quotidienne

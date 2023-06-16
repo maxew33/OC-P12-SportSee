@@ -2,6 +2,7 @@ import CallData from '../callData/CallData'
 import UserActivity from './UserActivity'
 import UserSessions from './UserSessions'
 import UserPerformance from './UserPerformance'
+import UserMainData from './UserMainData'
 
 export default async function Models(src: string, id: string) {
     const url = 'http://localhost:3000/user/' + id
@@ -12,9 +13,8 @@ export default async function Models(src: string, id: string) {
         return null
     }
 
-    // const userActivity = await callData.getUserActivity()
-    // const userSessions = await callData.getUserSessions()
-    // const userPerformance = await callData.getUserPerformance()
+    const mainData = new UserMainData(userData)
+    const userMainData = await mainData.getData()
 
     const activity = new UserActivity(await callData.getUserActivity())
     const userActivity = await activity.getData()
@@ -25,7 +25,5 @@ export default async function Models(src: string, id: string) {
     const performance = new UserPerformance(await callData.getUserPerformance())
     const userPerformance = await performance.getData()
 
-    console.log('models performance', performance, userPerformance)
-
-    return { userData, userActivity, userSessions, userPerformance }
+    return { userMainData, userActivity, userSessions, userPerformance }
 }

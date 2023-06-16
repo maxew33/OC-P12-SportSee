@@ -10,60 +10,50 @@ import Models from '../../models/models'
 
 export default function Dashboard() {
     interface dataFormat {
-        userData: {
-            id: number
-            userInfos: {
-                firstName: string
-                lastName: string
-                age: number
-            }
-            todayScore: number
-            keyData: {
-                calorieCount: number
-                proteinCount: number
-                carbohydrateCount: number
-                lipidCount: number
-            }
+        userMainData?: {
+            score: number
+            name: string
+            kcal: number
+            protein: number
+            carboHydrate: number
+            lipid: number
         }
 
-        userActivity: {
-                day: string
-                kilogram: number
-                calories: number
-            }[]
-        
+        userActivity?: {
+            day: string
+            kilogram: number
+            calories: number
+        }[]
 
-        userSessions: {
-                day: number
-                sessionLength: number
-            }[]
-        
+        userSessions?: {
+            day: number
+            sessionLength: number
+        }[]
 
-        userPerformance: {
-                value: number
-                kind: string
-            }[]
-        
+        userPerformance?: {
+            value: number
+            kind: string
+        }[]
     }
 
     const [data, setData] = useState<dataFormat | null>(null)
-
-    const { userInfos, todayScore, keyData } = data?.userData || {}
-
-    const { firstName, lastName, age } = userInfos || {}
-
-    const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
-        keyData || {}
 
     const activitySession = data?.userActivity || []
 
     const sessions = data?.userSessions || []
 
-    const performance = data?.userPerformance|| []
+    const performance = data?.userPerformance || []
+
+    const mainData = data?.userMainData || {
+        score: 0,
+        name: 'max',
+        kcal: 0,
+        protein: 0,
+        carboHydrate: 0,
+        lipid: 0,
+    }
 
     const navigate = useNavigate()
-
-    /* todo performance */
 
     // Get the parameter from the URL
     const params = useParams()
@@ -75,11 +65,10 @@ export default function Dashboard() {
     useEffect(() => {
         const fetchData = async () => {
             if (userId && dataSrc) {
-                console.log('data fetch')
                 const formattedData = await Models(dataSrc, userId)
-                console.log('formattedData', formattedData)
 
                 !formattedData && navigate('/error')
+
                 setData(formattedData)
             }
         }
@@ -87,17 +76,15 @@ export default function Dashboard() {
         fetchData()
     }, [])
 
-    console.log('data', data)
-
     return (
         <>
             {data && (
                 <div>
-                    <h1> dashboard - Bienvenue {firstName}</h1>
+                    <h1> dashboard - Bienvenue {mainData.name}</h1>
                     <ActivityChart data={activitySession} />
-                    <MainChart />
+                    <MainChart data={mainData} />
                     <PerformanceChart data={performance} />
-                    <SessionsChart data={sessions}/>
+                    <SessionsChart data={sessions} />
                     <NavBarHor />
                     <NavBarVert />
                 </div>
