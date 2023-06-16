@@ -5,10 +5,11 @@ interface MainChartProps {
     data?: {
         score: number
         name: string
-        kcal: number
-        protein: number
-        carboHydrate: number
-        lipid: number
+        keyData : {name: string, value: number, icon: string}[]
+        // kcal: number
+        // protein: number
+        // carboHydrate: number
+        // lipid: number
     }
 }
 
@@ -31,7 +32,8 @@ export default function MainChart(props: MainChartProps) {
                 <RadialBar 
                 dataKey="score" 
                 fill="#FF0000" 
-                startAngle={-90}/>
+                startAngle={-90}
+                cornerRadius={25}/>
             </RadialBarChart>
         </div>
     )

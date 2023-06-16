@@ -1,3 +1,8 @@
+import Protein from '../assets/protein.svg'
+import Lipid from '../assets/lipid.svg'
+import CarboHydrat from '../assets/carbohydrate.svg'
+import Calories from '../assets/calories.svg'
+
 export default class UserMainData {
     private _data: {
         id: number
@@ -48,10 +53,33 @@ export default class UserMainData {
         const customData = {
             score: customScore,
             name: customName,
-            kcal: customCalories,
-            protein: customProtein,
-            carboHydrate: customCarbohydrate,
-            lipid: customLipid,
+            keyData: [
+                {
+                    name: 'kilocalories',
+                    value: customCalories,
+                    icon: Calories
+                },
+                {
+                    name: 'protéines',
+                    value: customProtein,
+                    icon: Protein
+                },
+                {
+                    name: 'glucides',
+                    value: customCarbohydrate,
+                    icon: CarboHydrat
+                },
+                {
+                    name: 'lipide',
+                    value:customLipid,
+                    icon: Lipid
+                },
+
+            ]
+            // kcal: customCalories,
+            // protein: customProtein,
+            // carboHydrate: customCarbohydrate,
+            // lipid: customLipid,
         }
 
         return customData
