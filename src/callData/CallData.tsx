@@ -2,17 +2,17 @@ import data from '../__mocks__/data'
 
 export default class CallData {
     private _url: string
-    private _src: string
+    // private _src: string
     private _id: number
 
-    constructor(src: string, url: string) {
+    constructor(url: string) {
         this._url = url
-        this._src = src
+        // this._src = src
         this._id = parseInt(this._url.split('/').pop()!)
     }
 
     async getUserData() {
-        return this._src === 'api'
+        return import.meta.env.PROD
             ? fetch(this._url)
                   .then((res) => {
                       if (res.ok) {
@@ -29,7 +29,7 @@ export default class CallData {
     }
 
     async getUserActivity() {
-        return this._src === 'api'
+        return import.meta.env.PROD
             ? fetch(this._url + '/activity')
                   .then((res) => {
                       if (res.ok) {
@@ -48,7 +48,7 @@ export default class CallData {
     }
 
     async getUserSessions() {
-        return this._src === 'api'
+        return import.meta.env.PROD
             ? fetch(this._url + '/average-sessions')
                   .then((res) => {
                       if (res.ok) {
@@ -67,7 +67,7 @@ export default class CallData {
     }
 
     async getUserPerformance() {
-        return this._src === 'api'
+        return import.meta.env.PROD
             ? fetch(this._url + '/performance')
                   .then((res) => {
                       if (res.ok) {

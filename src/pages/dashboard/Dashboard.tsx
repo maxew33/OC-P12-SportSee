@@ -62,12 +62,10 @@ export default function Dashboard() {
 
     const userId = params.id
 
-    const dataSrc = params.src
-
     useEffect(() => {
         const fetchData = async () => {
-            if (userId && dataSrc) {
-                const formattedData = await Models(dataSrc, userId)
+            if (userId) {
+                const formattedData = await Models(userId)
 
                 !formattedData && navigate('/error')
 
