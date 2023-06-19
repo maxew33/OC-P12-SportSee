@@ -1,4 +1,3 @@
-import React from 'react'
 import {
     XAxis,
     YAxis,
@@ -9,6 +8,8 @@ import {
     BarChart,
     ResponsiveContainer,
 } from 'recharts'
+
+import styles from './ActivityChart.module.css'
 
 interface ActivityChartProps {
     data?: {
@@ -22,10 +23,10 @@ export default function ActivityChart(props: ActivityChartProps) {
     const { data } = props
 
     return (
-        <>
-            Activité quotidienne
-            {/* <ResponsiveContainer width="100%" height="100%"> */}
-            <BarChart width={835} height={320} data={data}>
+        <article className={styles.activity}>
+            <h3 className={styles.title}>Activité quotidienne</h3>
+            <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" verticalPoints={[0]} />
                 <XAxis dataKey="day" />
                 <YAxis yAxisId="right" orientation="right" stroke="#000" />
@@ -52,7 +53,7 @@ export default function ActivityChart(props: ActivityChartProps) {
                     fill="#E60000"
                 />
             </BarChart>
-            {/* </ResponsiveContainer> */}
-        </>
+            </ResponsiveContainer>
+        </article>
     )
 }

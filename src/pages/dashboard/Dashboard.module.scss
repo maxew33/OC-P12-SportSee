@@ -19,7 +19,9 @@
 }
 
 .banner {
-    line-height: 1.5;;
+    line-height: 1.5;
+    height: 10%;
+
     h1 {
         font-size: 3rem;
         font-weight: bold;
@@ -35,11 +37,18 @@
 }
 
 .dataCharts {
+    height: 75%;
     display: grid;
-
     grid-template-areas:
-        'Activity Activity Activity MainData'
-        'Sessions Performance MainScore MainData';
+        'activity activity activity mainData'
+        'sessions performance mainScore mainData';
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(2, 50%);
+}
 
-        grid-template: repeat(4, 1fr) / 1fr 1fr;
+.data{
+    grid-area: mainData;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }

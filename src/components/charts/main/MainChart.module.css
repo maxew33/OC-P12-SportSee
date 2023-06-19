@@ -1,0 +1,10 @@
+.mainChart {
+  grid-area: mainScore;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}/*# sourceMappingURL=MainChart.module.css.map */

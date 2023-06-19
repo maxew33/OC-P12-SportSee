@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.activity {
+  position: relative;
+  grid-area: activity;
+  background: #FBFBFB;
+}
+
+.title {
+  font-size: 1rem;
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+}/*# sourceMappingURL=ActivityChart.module.css.map */

@@ -1,0 +1,14 @@
+@import '../../../style/variables';
+
+.activity{
+    position: relative;
+    grid-area: activity;
+    background: $lightgrey;
+}
+
+.title{
+    font-size: 1rem;
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+}
