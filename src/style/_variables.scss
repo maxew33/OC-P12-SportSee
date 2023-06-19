@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-:root {
-    --red: #ff0000;
-    --white: #ffffff;
-    --black: #020203;
-    --grey: #74798C;
+    $red: #ff0000;
+    $white: #ffffff;
+    $black: #020203;
+    $grey: #74798C;
     
-    --border-radius: 5px;
-}
+    $border-radius: 5px;

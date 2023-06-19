@@ -53,14 +53,6 @@ table {
   border-spacing: 0;
 }
 
-:root {
-  --red: #ff0000;
-  --white: #ffffff;
-  --black: #020203;
-  --grey: #74798C;
-  --border-radius: 5px;
-}
-
 body {
   min-height: 100vh;
   font-family: "Roboto", sans-serif;

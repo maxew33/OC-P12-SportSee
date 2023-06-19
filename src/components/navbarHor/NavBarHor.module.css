@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  grid-area: navBarH;
+  justify-self: center;
+  width: 100%;
+  background: #020203;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  flex: 1 0 auto;
+}
+.navLinks > li {
+  cursor: pointer;
+}/*# sourceMappingURL=NavBarHor.module.css.map */

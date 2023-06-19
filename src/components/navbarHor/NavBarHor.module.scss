@@ -1,0 +1,29 @@
+@import '../../style/variables';
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: navBarH;
+    justify-self: center;
+    width: 100%;
+    // width: 95vw;
+    background: $black;
+    color: $white;
+    font-size: 1.5rem;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.navLinks{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex: 1 0 auto;    
+    >li{
+        cursor: pointer;
+    }
+}
+
