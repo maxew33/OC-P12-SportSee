@@ -2,12 +2,23 @@
     display: grid;
     width: 100vw;
     height: 100vh;
-    grid-template-areas:
-        'navBarH navBarH navBarH navBarH navBarH'
-        'navBarV Banner Banner Banner Banner'
-        'navBarV Activity Activity Activity MainData'
-        'navBarV Sessions Performance MainScore MainData';
     grid-template-rows: 5.75rem repeat(3, 1fr);
     grid-template-columns: 7.5rem repeat(4, 1fr);
     overflow: hidden;
+}
+
+.dataViewer {
+    grid-column: 2 / 6;
+    grid-row: 2 / 5;
+}
+
+.banner {
+}
+
+.dataCharts {
+    display: grid;
+
+    grid-template-areas:
+        'Activity Activity Activity MainData'
+        'Sessions Performance MainScore MainData';
 }

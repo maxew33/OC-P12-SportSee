@@ -1,0 +1,39 @@
+@import '../../style/variables';
+
+.navbar {
+    grid-column: 1;
+    grid-row: 2 / 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: $black;
+
+    > ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 5.75rem;
+    }
+
+    li {
+        width: 4rem;
+        height: 4rem;
+        background: $white;
+        border-radius: $border-radius;
+        display: grid;
+        place-content: center;
+        cursor: pointer;
+        margin: .625rem 0;
+    }
+}
+
+.copyright {
+    position: absolute;
+    bottom: 3.5rem;
+    writing-mode: vertical-lr;
+    display: inline-block;
+    transform: rotate(180deg);
+    font-size: 0.75rem;
+    color: $white;
+}

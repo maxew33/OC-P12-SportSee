@@ -75,26 +75,32 @@ export default function Dashboard() {
 
     return (
         <main className={styles.dashboard}>
+
             {data && (
-                <>
-                    <h1> dashboard - Bienvenue {mainData.name}</h1>
-                    <ActivityChart data={activitySession} />
-                    <MainChart data={mainData} />
-                    <PerformanceChart data={performance} />
-                    <SessionsChart data={sessions} />
-                    <div>
-                        {mainData.keyData.map((elt, idx) => (
-                            <div key={idx}>
-                                <Keydata data={elt} />{' '}
-                            </div>
-                        ))}
+                <section className={styles.dataViewer}>
+                    <header className={styles.banner}>
+                        <h1> dashboard - Bienvenue {mainData.name}</h1>
+                    </header>
+                    <div className={styles.dataCharts}>
+                        <ActivityChart data={activitySession} />
+                        <MainChart data={mainData} />
+                        <PerformanceChart data={performance} />
+                        <SessionsChart data={sessions} />
+                        <div>
+                            {mainData.keyData.map((elt, idx) => (
+                                <div key={idx}>
+                                    <Keydata data={elt} />{' '}
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </>
+                </section>
             )}
 
+            
             <NavBarHor />
-
             <NavBarVert />
+
         </main>
     )
 }
