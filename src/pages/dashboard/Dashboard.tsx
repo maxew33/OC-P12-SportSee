@@ -50,7 +50,7 @@ export default function Dashboard() {
     const mainData = data?.userMainData || {
         score: 0,
         name: 'max',
-        keyData: [{ name: '', value: 0, icon: '' }],
+        keyData: [{ name: '', value: 0, icon: '', color: '' }],
     }
 
     const navigate = useNavigate()
@@ -88,11 +88,11 @@ export default function Dashboard() {
                         <MainChart data={mainData} />
                         <PerformanceChart data={performance} />
                         <SessionsChart data={sessions} />
-                        <div>
+                        <div className={styles.data}>
                             {mainData.keyData.map((elt, idx) => (
-                                <div key={idx}>
-                                    <Keydata data={elt} />{' '}
-                                </div>
+                                <article key={idx}>
+                                    <Keydata data={elt} />
+                                </article>
                             ))}
                         </div>
                     </div>
