@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .dashboard {
   display: grid;
   width: 100vw;
@@ -10,9 +11,28 @@
 .dataViewer {
   grid-column: 2/6;
   grid-row: 2/5;
+  display: flex;
+  flex-direction: column;
+  padding: 4.25rem 10rem;
+  gap: 5rem;
+}
+
+.banner {
+  line-height: 1.5;
+}
+.banner h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.banner h2 {
+  font-size: 1.125rem;
+}
+.banner span {
+  color: #ff0000;
 }
 
 .dataCharts {
   display: grid;
   grid-template-areas: "Activity Activity Activity MainData" "Sessions Performance MainScore MainData";
+  grid-template: repeat(4, 1fr)/1fr 1fr;
 }/*# sourceMappingURL=Dashboard.module.css.map */

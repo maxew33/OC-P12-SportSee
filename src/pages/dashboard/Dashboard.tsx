@@ -75,11 +75,13 @@ export default function Dashboard() {
 
     return (
         <main className={styles.dashboard}>
-
             {data && (
                 <section className={styles.dataViewer}>
                     <header className={styles.banner}>
-                        <h1> dashboard - Bienvenue {mainData.name}</h1>
+                        <h1>
+                            Bonjour <span>{mainData.name}</span>
+                        </h1>
+                        <h2>Félicitations! Vous avez explosé vos objectifs hier 👏</h2>
                     </header>
                     <div className={styles.dataCharts}>
                         <ActivityChart data={activitySession} />
@@ -97,10 +99,9 @@ export default function Dashboard() {
                 </section>
             )}
 
-            
             <NavBarHor />
-            <NavBarVert />
 
+            <NavBarVert />
         </main>
     )
 }

@@ -1,3 +1,5 @@
+@import '../../style/variables';
+
 .dashboard {
     display: grid;
     width: 100vw;
@@ -10,9 +12,26 @@
 .dataViewer {
     grid-column: 2 / 6;
     grid-row: 2 / 5;
+    display: flex;
+    flex-direction: column;
+    padding: 4.25rem 10rem;
+    gap: 5rem;
 }
 
 .banner {
+    line-height: 1.5;;
+    h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 1.125rem;
+    }
+
+    span {
+        color: $red;
+    }
 }
 
 .dataCharts {
@@ -21,4 +40,6 @@
     grid-template-areas:
         'Activity Activity Activity MainData'
         'Sessions Performance MainScore MainData';
+
+        grid-template: repeat(4, 1fr) / 1fr 1fr;
 }
