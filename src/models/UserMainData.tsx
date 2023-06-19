@@ -58,28 +58,31 @@ export default class UserMainData {
                     name: 'kilocalories',
                     value: customCalories,
                     icon: Calories,
-                    color: '#FBEAEA'
+                    color: '#FBEAEA',
+                    unit: 'kCal',
                 },
                 {
                     name: 'protéines',
                     value: customProtein,
                     icon: Protein,
-                    color: '#E9F4FB'
+                    color: '#E9F4FB',
+                    unit: 'g',
                 },
                 {
                     name: 'glucides',
                     value: customCarbohydrate,
                     icon: CarboHydrat,
-                    color: '#FBF6E5'
+                    color: '#FBF6E5',
+                    unit: 'g',
                 },
                 {
                     name: 'lipide',
-                    value:customLipid,
+                    value: customLipid,
                     icon: Lipid,
-                    color: '#FBEAEF'
+                    color: '#FBEAEF',
+                    unit: 'g',
                 },
-
-            ]
+            ],
         }
 
         return customData

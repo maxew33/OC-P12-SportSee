@@ -19,7 +19,13 @@ export default function Dashboard() {
         userMainData?: {
             score: number
             name: string
-            keyData: { name: string; value: number; icon: string }[]
+            keyData: {
+                name: string
+                value: number
+                icon: string
+                color: string
+                unit: string
+            }[]
         }
 
         userActivity?: {
@@ -50,7 +56,7 @@ export default function Dashboard() {
     const mainData = data?.userMainData || {
         score: 0,
         name: 'max',
-        keyData: [{ name: '', value: 0, icon: '', color: '' }],
+        keyData: [{ name: '', value: 0, icon: '', color: '', unit: '' }],
     }
 
     const navigate = useNavigate()
@@ -81,7 +87,10 @@ export default function Dashboard() {
                         <h1>
                             Bonjour <span>{mainData.name}</span>
                         </h1>
-                        <h2>Félicitations! Vous avez explosé vos objectifs hier 👏</h2>
+                        <h2>
+                            Félicitations! Vous avez explosé vos objectifs hier
+                            👏
+                        </h2>
                     </header>
                     <div className={styles.dataCharts}>
                         <ActivityChart data={activitySession} />
