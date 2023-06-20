@@ -1,14 +1,30 @@
 @import '../../../style/variables';
 
-.activity{
+.activity {
     position: relative;
     grid-area: activity;
     background: $lightgrey;
+    padding: 2rem;
 }
 
-.title{
+.title {
     font-size: 1rem;
     position: absolute;
+    font-weight: 600;
     top: 1.5rem;
     left: 2rem;
+}
+
+.textLegend {
+    color: $black;
+    margin-right: 2vw;
+    font-size: 0.875rem;
+}
+
+.toolTip{
+    color: $white;
+    background: $red;
+    font-size: .5rem;
+    line-height: 6;
+    padding: 0 1rem;
 }

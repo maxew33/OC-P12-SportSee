@@ -3,11 +3,27 @@
   position: relative;
   grid-area: activity;
   background: #FBFBFB;
+  padding: 2rem;
 }
 
 .title {
   font-size: 1rem;
   position: absolute;
+  font-weight: 600;
   top: 1.5rem;
   left: 2rem;
+}
+
+.textLegend {
+  color: #020203;
+  margin-right: 2vw;
+  font-size: 0.875rem;
+}
+
+.toolTip {
+  color: #ffffff;
+  background: #ff0000;
+  font-size: 0.5rem;
+  line-height: 6;
+  padding: 0 1rem;
 }/*# sourceMappingURL=ActivityChart.module.css.map */
