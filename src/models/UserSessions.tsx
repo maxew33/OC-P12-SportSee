@@ -7,6 +7,8 @@ export default class UserSessions {
         userId: number
     }
 
+    private _day: string[] = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
+
     constructor(data: {
         sessions: {
             day: number
@@ -18,6 +20,12 @@ export default class UserSessions {
     }
 
     getData() {
-        return this._data.sessions
+        // return this._data.sessions
+        const customData = this._data.sessions.map((data) => ({
+            ...data,
+            day: this._day[data.day - 1],
+        }))
+
+        return customData
     }
 }
