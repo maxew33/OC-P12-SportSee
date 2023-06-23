@@ -12,10 +12,6 @@ interface MainChartProps {
         score: number
         name: string
         keyData: { name: string; value: number; icon: string }[]
-        // kcal: number
-        // protein: number
-        // carboHydrate: number
-        // lipid: number
     }
 }
 
@@ -24,14 +20,20 @@ export default function MainChart(props: MainChartProps) {
     return (
         <article className={styles.mainChart}>
             <h3 className={styles.title}>Score</h3>
+            <p className={styles.score}>
+                <span className={styles.value}> {[data?.score]} %</span>
+                de votre <br/>
+                objectif
+            </p>
             <ResponsiveContainer width="100%" height="100%">
                 <RadialBarChart
                     cx="50%"
                     cy="50%"
                     innerRadius="100%"
-                    // outerRadius="80%"
+                    outerRadius="80%"
                     barSize={25}
                     data={[data]}
+                    startAngle={90}
                 >
                     <PolarAngleAxis
                         type="number"
@@ -41,7 +43,6 @@ export default function MainChart(props: MainChartProps) {
                     <RadialBar
                         dataKey="score"
                         fill="#FF0000"
-                        startAngle={-90}
                         cornerRadius={25}
                     />
                 </RadialBarChart>
