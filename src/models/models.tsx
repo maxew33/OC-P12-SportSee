@@ -6,8 +6,6 @@ import UserMainData from './UserMainData'
 
 export default async function Models(id: string) {
 
-    console.log(import.meta.env.VITE_STATUS_DEVELOPPEMENT, import.meta.env.DEV)
-    
     const url = 'http://localhost:3000/user/' + id
     const callData = new CallData(url)
     const userData = await callData.getUserData()

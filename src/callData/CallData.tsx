@@ -2,12 +2,11 @@ import data from '../__mocks__/data'
 
 export default class CallData {
     private _url: string
-    // private _src: string
     private _id: number
 
     constructor(url: string) {
         this._url = url
-        // this._src = src
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         this._id = parseInt(this._url.split('/').pop()!)
     }
 
@@ -48,7 +47,7 @@ export default class CallData {
     }
 
     async getUserSessions() {
-        return import.meta.env.PROD
+        return import.meta.env.ENV
             ? fetch(this._url + '/average-sessions')
                   .then((res) => {
                       if (res.ok) {
@@ -67,7 +66,7 @@ export default class CallData {
     }
 
     async getUserPerformance() {
-        return import.meta.env.PROD
+        return import.meta.env.ENV
             ? fetch(this._url + '/performance')
                   .then((res) => {
                       if (res.ok) {

@@ -6,6 +6,7 @@
   grid-template-rows: 5.75rem repeat(3, 1fr);
   grid-template-columns: 7.5rem repeat(4, 1fr);
   overflow: hidden;
+  background: #ffffff;
 }
 
 .dataViewer {
@@ -38,6 +39,7 @@
   grid-template-areas: "activity activity activity mainData" "sessions performance mainScore mainData";
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: repeat(2, 50%);
+  gap: 2.75rem;
 }
 
 .data {

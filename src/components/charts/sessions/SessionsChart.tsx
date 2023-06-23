@@ -9,27 +9,21 @@ import {
 } from 'recharts'
 
 import styles from './SessionsChart.module.css'
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 
 interface SessionsChartProps {
     data?: {
-        day: number
+        day: string
         sessionLength: number
     }[]
 }
 
 export default function SessionsChart(props: SessionsChartProps) {
-
-    const [shadowPos, setShadowPos] = useState(100)
     const { data } = props
 
     const duration = [0, 0]
 
     const shadowRef = useRef<HTMLDivElement>(null)
-
-    useEffect(()=>{
-        shadowRef.current && (shadowRef.current.style.background = `linear-gradient(90deg, #00000000 0 ${shadowPos}%, #00000050 ${shadowPos}% 100%)`)
-    },[shadowPos])
 
     data?.forEach((elt, idx) => {
         const { sessionLength } = elt
@@ -43,14 +37,23 @@ export default function SessionsChart(props: SessionsChartProps) {
         const { active, payload } = props
 
         if (active && payload) {
+            const dot = document
+                .querySelector('.recharts-active-dot')
+                ?.getBoundingClientRect()
 
-            const dotPos = document.querySelector('.recharts-active-dot')?.getBoundingClientRect()
+            const dotPos = { left: dot?.left ?? 0, width: dot?.width ?? 0 }
 
-            if(shadowRef.current && dotPos) {
-                const newShadowPos = 100 * (dotPos?.left + dotPos?.width/2 - shadowRef.current.getBoundingClientRect().left) / shadowRef.current.getBoundingClientRect().width
-                setShadowPos(newShadowPos)
+            if (shadowRef.current && dotPos) {
+                const newShadowPos =
+                    (100 *
+                        (dotPos.left +
+                            dotPos.width / 2 -
+                            shadowRef.current.getBoundingClientRect().left)) /
+                    shadowRef.current.getBoundingClientRect().width
+
+                displayShadow(newShadowPos)
             }
-            
+
             return (
                 <div className={styles.toolTip}>
                     {payload[0].payload.sessionLength} min
@@ -60,8 +63,13 @@ export default function SessionsChart(props: SessionsChartProps) {
         return null
     }
 
-    const unsetShadow = () =>{
-        setShadowPos(100)
+    const displayShadow = (value: number) => {
+        shadowRef.current &&
+            (shadowRef.current.style.background = `linear-gradient(90deg, #00000000 0 ${value}%, #00000050 ${value}% 100%)`)
+    }
+
+    const removeShadow = () => {
+        displayShadow(100)
     }
 
     return (
@@ -69,15 +77,12 @@ export default function SessionsChart(props: SessionsChartProps) {
             <div className={styles.cursorShadow} ref={shadowRef}></div>
             <h3 className={styles.title}>durée moyenne des sessions</h3>
             <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={data} 
-                        onMouseLeave={unsetShadow}
-                        >
+                <LineChart data={data} onMouseLeave={removeShadow}>
                     <XAxis
                         dataKey="day"
                         tickSize={0}
                         strokeWidth={0}
                         tick={{ fill: '#ffffffaa' }}
-                        
                     />
                     <YAxis
                         yAxisId="axis"
@@ -87,8 +92,7 @@ export default function SessionsChart(props: SessionsChartProps) {
                     <Tooltip
                         isAnimationActive={false}
                         content={customToolTip}
-                        cursor={{ stroke: '#ffffff50'}
-                    }
+                        cursor={{ stroke: '#ffffff50' }}
                     />
                     <Line
                         yAxisId="axis"

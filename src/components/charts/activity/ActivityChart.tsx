@@ -23,8 +23,6 @@ interface ActivityChartProps {
 export default function ActivityChart(props: ActivityChartProps) {
     const { data } = props
 
-    console.log(data)
-
     const weight = [0, 0]
 
     data?.forEach((elt, idx) => {
@@ -35,8 +33,6 @@ export default function ActivityChart(props: ActivityChartProps) {
     })
 
     const tickQty = weight[1] - weight[0] + 5
-
-    console.log(tickQty)
 
     const formatLegendText = (value: string) => {
         return <span className={styles.textLegend}>{value}</span>
@@ -79,11 +75,9 @@ export default function ActivityChart(props: ActivityChartProps) {
                         yAxisId="right"
                         orientation="right"
                         stroke="#ffffffff"
-                        color="red"
                         tick={{ fill: '#9B9EAC' }}
                         tickCount={tickQty}
                         tickMargin={20}
-                        type="number"
                         domain={[weight[0] - 2, weight[1] + 2]}
                     />
                     <YAxis yAxisId="left" orientation="left" hide />

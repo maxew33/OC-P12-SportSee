@@ -35,7 +35,7 @@ export default function Dashboard() {
         }[]
 
         userSessions?: {
-            day: number
+            day: string
             sessionLength: number
         }[]
 
@@ -77,7 +77,7 @@ export default function Dashboard() {
         }
 
         fetchData()
-    }, [])
+    }, [navigate, userId])
 
     return (
         <main className={styles.dashboard}>

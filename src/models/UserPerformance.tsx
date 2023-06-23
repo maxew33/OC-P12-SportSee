@@ -8,12 +8,12 @@ export default class UserPerformance {
     }
 
     private _kind: { [key: number]: string } = {
-        1: 'cardio',
-        2: 'énergie',
-        3: 'endurance',
-        4: 'force',
-        5: 'vitesse',
-        6: 'intensité',
+        1: 'Cardio',
+        2: 'Energie',
+        3: 'Endurance',
+        4: 'Force',
+        5: 'Vitesse',
+        6: 'Intensité',
     }
 
     constructor(data: {
@@ -32,6 +32,6 @@ export default class UserPerformance {
             kind: this._kind[data.kind],
         }))
 
-        return customData
+        return customData.reverse()
     }
 }
