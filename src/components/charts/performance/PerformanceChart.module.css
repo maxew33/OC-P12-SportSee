@@ -1,4 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .performance {
   position: relative;
   grid-area: performance;
+  background: #282D30;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  padding: 1rem;
+  color: white;
+}
+.performance > * {
+  overflow: visible !important;
 }/*# sourceMappingURL=PerformanceChart.module.css.map */
