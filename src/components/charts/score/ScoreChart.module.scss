@@ -1,11 +1,10 @@
-@import '../../../style/variables';
+@import '../../../style/variables', '../../../style/mixins';
 
 .mainChart {
+    @include article;
+    justify-self: end;
     grid-area: mainScore;
-    position: relative;
     background: $lightgrey;
-    aspect-ratio: 1;
-    border-radius: $border-radius;
 }
 
 .title {
@@ -29,8 +28,8 @@
     color: #74798c;
     background: $white;
     border-radius: 50%;
-    width: 80%;
-    height: 80%;
+    width: 75%;
+    height: 75%;
 }
 
 .value {

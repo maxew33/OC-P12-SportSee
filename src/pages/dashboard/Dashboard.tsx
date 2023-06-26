@@ -7,7 +7,7 @@ import NavBarHor from '../../components/navbarHor/NavBarHor'
 import NavBarVert from '../../components/navbarVert/NavBarVert'
 
 import ActivityChart from '../../components/charts/activity/ActivityChart'
-import MainChart from '../../components/charts/main/MainChart'
+import ScoreChart from '../../components/charts/score/ScoreChart'
 import PerformanceChart from '../../components/charts/performance/PerformanceChart'
 import SessionsChart from '../../components/charts/sessions/SessionsChart'
 import Keydata from '../../components/charts/keyData/Keydata'
@@ -94,7 +94,7 @@ export default function Dashboard() {
                     </header>
                     <div className={styles.dataCharts}>
                         <ActivityChart data={activitySession} />
-                        <MainChart data={mainData} />
+                        <ScoreChart data={mainData} />
                         <PerformanceChart data={performance} />
                         <SessionsChart data={sessions} />
                         <div className={styles.data}>

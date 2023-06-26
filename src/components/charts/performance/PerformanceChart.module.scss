@@ -1,15 +1,15 @@
-@import '../../../style/variables';
+@import '../../../style/variables', '../../../style/mixins';
 
 .performance{
-    position: relative;
+    @include article;
     grid-area: performance;
     background: #282D30;
-    aspect-ratio: 1;
-    border-radius: $border-radius;
-    padding: 1rem;
     color: white;
+    justify-self: center;
+    overflow: visible;
 
-    >*{
-        overflow: visible !important;
+    .chartContainer{
+        padding: 20px;
     }
+
 }

@@ -1,16 +1,13 @@
-@import '../../../style/variables';
+@import '../../../style/variables', '../../../style/mixins';
 
 .sessions {
-    position: relative;
+    @include article;
     grid-area: sessions;
     background: $red;
-    border-radius: $border-radius;
     color: #ffffffaa;
-    aspect-ratio: 1;
-    overflow: hidden;
 }
 
-.title{
+.title {
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -22,7 +19,7 @@
     padding: 1rem;
 }
 
-.cursorShadow{
+.cursorShadow {
     position: absolute;
     top: 0;
     left: 0;

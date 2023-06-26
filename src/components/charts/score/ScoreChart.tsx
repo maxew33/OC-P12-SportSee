@@ -5,7 +5,7 @@ import {
     ResponsiveContainer,
 } from 'recharts'
 
-import styles from './MainChart.module.css'
+import styles from './ScoreChart.module.css'
 
 interface MainChartProps {
     data?: {
@@ -29,8 +29,8 @@ export default function MainChart(props: MainChartProps) {
                 <RadialBarChart
                     cx="50%"
                     cy="50%"
-                    innerRadius="100%"
-                    outerRadius="80%"
+                    innerRadius="75%"
+                    outerRadius="75%"
                     barSize={25}
                     data={[data]}
                     startAngle={90}
