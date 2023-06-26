@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.logIn {
+  grid-column: 2/6;
+  grid-row: 2/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vw;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 2rem;
+  border: 1px solid #74798C;
+  background: #FBFBFB;
+  padding: 1rem 0;
+  width: 25vw;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 0 #74798C;
+  margin: 1vw 0 2.5vw 0;
+}
+
+.input {
+  width: 17.5vw;
+  font-size: 2vw;
+  border: none;
+  border-radius: 5px;
+  background: #FBFBFB;
+}
+
+.button {
+  width: 25vw;
+  border-radius: 5px;
+  border: none;
+  background: #020203;
+  color: #FBFBFB;
+  padding: 1rem 2rem;
+  font-size: 2vw;
+  text-transform: capitalize;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px 0 #74798C;
+}/*# sourceMappingURL=LogIn.module.css.map */

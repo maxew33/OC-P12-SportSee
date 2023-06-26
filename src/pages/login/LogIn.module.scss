@@ -1,0 +1,42 @@
+@import '../../style/mixins', '../../style/variables';
+
+.logIn {
+    @include content-wrapper;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+}
+
+.inputWrapper{
+    display: flex;
+    gap: 2rem;
+    border: 1px solid $grey;
+    background: $lightgrey;
+    padding: 1rem 0;
+    width: 25vw;
+    justify-content: space-evenly;
+    border-radius:$border-radius;
+    box-shadow: 1px 1px 5px 0 $grey;
+    margin: 1vw 0 2.5vw 0;
+}
+
+.input{
+    width: 17.5vw;
+    font-size: 2vw;
+    border: none;
+    border-radius: $border-radius;
+    background: $lightgrey;
+}
+
+.button {
+    width: 25vw;
+    border-radius: $border-radius;
+    border: none;
+    background: $black;
+    color: $lightgrey;
+    padding: 1rem 2rem;
+    font-size: 2vw;
+    text-transform: capitalize;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 0 $grey;
+}

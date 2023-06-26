@@ -1,7 +1,9 @@
 import { useState, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
+import RunnigMan from '../../assets/runningMan.svg'
+import styles from './LogIn.module.css'
 
-export default function Logging() {
+export default function LogIn() {
     const [inputId, setInputId] = useState('')
 
     const navigate = useNavigate()
@@ -16,17 +18,23 @@ export default function Logging() {
         navigate(`dashboard/${inputId}`)
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Merci de rentrer votre identifiant :
+        <form onSubmit={handleSubmit} className={styles.logIn}>
+            <label htmlFor="inputId">Identifiant:</label>
+            <div className={styles.inputWrapper}>
+                <img src={RunnigMan} alt="submit" />
                 <input
                     name="inputId"
+                    id="inputId"
+                    className={styles.input}
                     value={inputId}
                     onInput={(e) => changeInput(e)}
+                    placeholder="n° d'adhésion"
                 />
-            </label>
+            </div>
 
-            <button type="submit">envoyer</button>
+            <button type="submit" className={styles.button}>
+                envoyer
+            </button>
         </form>
     )
 }
