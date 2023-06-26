@@ -3,9 +3,6 @@ import { useEffect, useState } from 'react'
 
 import Models from '../../models/models'
 
-import NavBarHor from '../../components/navbarHor/NavBarHor'
-import NavBarVert from '../../components/navbarVert/NavBarVert'
-
 import ActivityChart from '../../components/charts/activity/ActivityChart'
 import ScoreChart from '../../components/charts/score/ScoreChart'
 import PerformanceChart from '../../components/charts/performance/PerformanceChart'
@@ -79,8 +76,7 @@ export default function Dashboard() {
         fetchData()
     }, [navigate, userId])
 
-    return (
-        <main className={styles.dashboard}>
+    return (<>
             {data && (
                 <section className={styles.dataViewer}>
                     <header className={styles.banner}>
@@ -107,10 +103,6 @@ export default function Dashboard() {
                     </div>
                 </section>
             )}
-
-            <NavBarHor />
-
-            <NavBarVert />
-        </main>
+        </>
     )
 }

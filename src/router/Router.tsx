@@ -1,13 +1,13 @@
-import Logging from '../pages/logging/Logging'
 import Error from '../pages/error/Error'
 import Dashboard from '../pages/dashboard/Dashboard'
 import {Routes, Route} from 'react-router-dom'
+import LogIn from '../pages/login/LogIn'
 
 export default function Router() {
     const path = [
         {
             path: '/',
-            element: <Logging />,
+            element: <LogIn />,
         },
         {
             path: '/dashboard/:id',

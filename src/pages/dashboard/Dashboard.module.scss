@@ -1,21 +1,7 @@
-@import '../../style/variables';
-
-.dashboard {
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-    grid-template-rows: 5.75rem repeat(3, 1fr);
-    grid-template-columns: 7.5rem repeat(4, 1fr);
-    overflow: hidden;
-    background: $white;
-    // background: #000555;
-}
+@import '../../style/variables', '../../style/mixins';
 
 .dataViewer {
-    grid-column: 2 / 6;
-    grid-row: 2 / 5;
-    display: flex;
-    flex-direction: column;
+    @include content-wrapper;
     padding: 4.25rem 10rem;
     gap: 5rem;
 }
