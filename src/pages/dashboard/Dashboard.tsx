@@ -18,7 +18,7 @@ export default function Dashboard() {
             name: string
             keyData: {
                 name: string
-                value: number
+                value: number | string
                 icon: string
                 color: string
                 unit: string
@@ -95,7 +95,7 @@ export default function Dashboard() {
                         <SessionsChart data={sessions} />
                         <div className={styles.data}>
                             {mainData.keyData.map((elt, idx) => (
-                                <article key={idx}>
+                                <article key={idx} className={styles.keydata}>
                                     <Keydata data={elt} />
                                 </article>
                             ))}

@@ -45,7 +45,7 @@ export default class UserMainData {
             ? this._data.todayScore * 100
             : this._data.score * 100
         const customName = this._data.userInfos.firstName
-        const customCalories = this._data.keyData.calorieCount / 1000
+        const customCalories = (this._data.keyData.calorieCount / 1000).toFixed(3).replace('.', ',')
         const customProtein = this._data.keyData.proteinCount
         const customCarbohydrate = this._data.keyData.carbohydrateCount
         const customLipid = this._data.keyData.lipidCount
@@ -55,7 +55,7 @@ export default class UserMainData {
             name: customName,
             keyData: [
                 {
-                    name: 'kilocalories',
+                    name: 'calories',
                     value: customCalories,
                     icon: Calories,
                     color: '#FBEAEA',

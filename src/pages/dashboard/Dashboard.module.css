@@ -4,13 +4,12 @@
   grid-row: 2/5;
   display: flex;
   flex-direction: column;
-  padding: 4.25rem 10rem;
-  gap: 5rem;
+  padding: 6vh 6.25vw;
+  justify-content: space-between;
 }
 
 .banner {
-  line-height: 1.5;
-  height: 10%;
+  line-height: 7.5vh;
 }
 .banner h1 {
   font-size: 3rem;
@@ -24,12 +23,11 @@
 }
 
 .dataCharts {
-  height: 75%;
   display: grid;
   grid-template-areas: "activity activity activity mainData" "sessions performance mainScore mainData";
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(2, 50%);
-  gap: 2.75rem;
+  grid-template-columns: repeat(3, 25vmin) auto;
+  grid-template-rows: 30vh 25vh;
+  gap: 2.5vw;
 }
 
 .data {
@@ -37,4 +35,26 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.keydata {
+  background: #FBFBFB;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  height: 12vh;
+  line-height: 1.5;
+  width: 100%;
+}
+
+@media screen and (min-width: 1500px) {
+  :root {
+    font-size: 18px;
+  }
+  .dataCharts {
+    display: grid;
+    grid-template-areas: "activity activity activity mainData mainScore" "activity activity activity sessions performance";
+    grid-template-columns: auto auto 30vh 30vh;
+    grid-template-rows: repeat(2, 30vh);
+  }
 }/*# sourceMappingURL=Dashboard.module.css.map */

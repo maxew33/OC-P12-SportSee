@@ -11,7 +11,7 @@ interface MainChartProps {
     data?: {
         score: number
         name: string
-        keyData: { name: string; value: number; icon: string }[]
+        keyData: { name: string; value: number | string; icon: string }[]
     }
 }
 
@@ -29,9 +29,8 @@ export default function MainChart(props: MainChartProps) {
                 <RadialBarChart
                     cx="50%"
                     cy="50%"
-                    innerRadius="75%"
-                    outerRadius="75%"
-                    barSize={25}
+                    innerRadius="70%"
+                    barSize={7}
                     data={[data]}
                     startAngle={90}
                 >

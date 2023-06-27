@@ -8,8 +8,7 @@
     justify-self: center;
     overflow: visible;
 
-    .chartContainer{
-        padding: 20px;
-    }
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,22 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-.data {
-  background: #FBFBFB;
-  display: flex;
-  align-items: center;
-  border-radius: 5px;
-  height: 8rem;
-  line-height: 1.5;
-}
-.data > div {
-  margin-left: 2rem;
+.imgWrapper, .dataWrapper {
+  margin-left: min(5%, 2.5vw);
 }
 
 .imgWrapper {
-  height: 4rem;
-  width: 4rem;
+  height: 6vmin;
+  width: 6vmin;
   display: grid;
   place-content: center;
   border-radius: 5px;
+}
+
+.dataWrapper {
+  min-width: 50%;
 }
 
 .value {
@@ -28,4 +24,5 @@
 .name {
   color: #74798C;
   font-size: 0.875rem;
+  text-transform: capitalize;
 }/*# sourceMappingURL=KeyData.module.css.map */

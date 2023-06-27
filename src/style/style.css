@@ -66,4 +66,10 @@ body {
   grid-template-columns: 7.5rem repeat(4, 1fr);
   overflow: hidden;
   background: #ffffff;
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=style.css.map */

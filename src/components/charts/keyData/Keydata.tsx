@@ -4,7 +4,7 @@ interface keyDataProps {
     data?: {
         icon: string
         name: string
-        value: number
+        value: number | string
         color: string
         unit: string
     }
@@ -12,8 +12,9 @@ interface keyDataProps {
 
 export default function Keydata(props: keyDataProps) {
     const { data } = props
+
     return (
-        <article className={styles.data}>
+        <>
             <div
                 className={styles.imgWrapper}
                 style={{ backgroundColor: data?.color }}
@@ -25,6 +26,6 @@ export default function Keydata(props: keyDataProps) {
                 <span className={styles.value}>{data?.value}{data?.unit}</span>
                 <span className={styles.name}>{data?.name}</span>                
             </div>
-        </article>
+        </>
     )
 }

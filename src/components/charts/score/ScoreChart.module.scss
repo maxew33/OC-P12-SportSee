@@ -9,8 +9,8 @@
 
 .title {
     position: absolute;
-    top: 2rem;
-    left: 2rem;
+    top: 3vh;
+    left: 3vh;
     font-size: 1rem;
     font-weight: 500;
 }
@@ -26,10 +26,10 @@
     line-height: 1.5;
     font-size: 1rem;
     color: #74798c;
-    background: $white;
+    background: white;
     border-radius: 50%;
-    width: 75%;
-    height: 75%;
+    width: 65%;
+    height: 65%;
 }
 
 .value {

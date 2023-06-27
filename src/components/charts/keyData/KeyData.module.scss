@@ -1,25 +1,19 @@
 @import '../../../style/variables';
 
-.data {
-    background: $lightgrey;
-    display: flex;
-    align-items: center;
-    // justify-content: space-evenly;
-    border-radius: $border-radius;
-    height: 8rem;
-    line-height: 1.5;
-
-    >div{
-        margin-left: 2rem;
-    }
+.imgWrapper, .dataWrapper{
+    margin-left: min(5%, 2.5vw);
 }
 
 .imgWrapper {
-    height: 4rem;
-    width: 4rem;
+    height: 6vmin;
+    width: 6vmin;
     display: grid;
     place-content: center;
     border-radius: $border-radius;
+}
+
+.dataWrapper{
+    min-width: 50%;
 }
 
 .value {
@@ -31,4 +25,5 @@
 .name {
     color: $grey;
     font-size: 0.875rem;
+    text-transform: capitalize;
 }

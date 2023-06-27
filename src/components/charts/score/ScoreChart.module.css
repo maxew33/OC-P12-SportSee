@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .mainChart {
+  height: 100%;
   max-width: 100%;
-  max-height: 100%;
   aspect-ratio: 1;
   border-radius: 5px;
   position: relative;
@@ -12,8 +12,8 @@
 
 .title {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 3vh;
+  left: 3vh;
   font-size: 1rem;
   font-weight: 500;
 }
@@ -29,10 +29,10 @@
   line-height: 1.5;
   font-size: 1rem;
   color: #74798c;
-  background: #ffffff;
+  background: white;
   border-radius: 50%;
-  width: 75%;
-  height: 75%;
+  width: 65%;
+  height: 65%;
 }
 
 .value {

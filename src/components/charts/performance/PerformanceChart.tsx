@@ -25,10 +25,10 @@ export default function PerformanceChart(props: PerformanceChartProps) {
             <Text
                 {...rest}
                 verticalAnchor="middle"
-                y={y + (y - cy) / 8}
-                x={x + (x - cx) / 8}
+                y={y + (y - cy) / 15}
+                x={x + (x - cx) / 15}
                 fill='white'
-                fontSize={12}
+                fontSize={10}
             >
                 {payload.value}
             </Text>
@@ -37,7 +37,7 @@ export default function PerformanceChart(props: PerformanceChartProps) {
     return (
         <article className={styles.performance}>
             <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+                <RadarChart cx="50%" cy="50%" outerRadius="65%" data={data}>
                     <PolarGrid stroke="#ffffff" radialLines={false} />
                     <PolarAngleAxis
                         dataKey="kind"
