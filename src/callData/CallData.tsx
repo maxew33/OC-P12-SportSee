@@ -47,7 +47,7 @@ export default class CallData {
     }
 
     async getUserSessions() {
-        return import.meta.env.ENV
+        return import.meta.env.PROD
             ? fetch(this._url + '/average-sessions')
                   .then((res) => {
                       if (res.ok) {
@@ -66,7 +66,7 @@ export default class CallData {
     }
 
     async getUserPerformance() {
-        return import.meta.env.ENV
+        return import.meta.env.PROD
             ? fetch(this._url + '/performance')
                   .then((res) => {
                       if (res.ok) {

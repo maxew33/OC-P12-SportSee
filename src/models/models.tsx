@@ -15,16 +15,16 @@ export default async function Models(id: string) {
     }
 
     const mainData = new UserMainData(userData)
-    const userMainData = await mainData.getData()
+    const userMainData = mainData.getData()
 
     const activity = new UserActivity(await callData.getUserActivity())
-    const userActivity = await activity.getData()
+    const userActivity = activity.getData()
 
     const sessions = new UserSessions(await callData.getUserSessions())
-    const userSessions = await sessions.getData()
+    const userSessions = sessions.getData()
 
     const performance = new UserPerformance(await callData.getUserPerformance())
-    const userPerformance = await performance.getData()
+    const userPerformance = performance.getData()
 
     return { userMainData, userActivity, userSessions, userPerformance }
 }
