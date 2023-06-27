@@ -36,7 +36,7 @@ Par défaut le site est en mode développement et utilise les données mockées.
 * Il faut lancer celui-ci (soit avec docker, soit en le clonant puis en utilisant la commande `yarn dev`).
 
 * soit aller dans 'src/callData/CallData.tsx' et remplacer 'import.meta.env.PROD' par 'import.meta.env.DEV'
-* soit aller sur le [site déployé](https://maxew33.github.io/oc-12-sportsee-test/)
+* soit aller sur le [site déployé](https://maxew33.github.io/OC-P12-SportSee/)
 
 ## Ressources
 
