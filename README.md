@@ -26,12 +26,17 @@ Le backend peut être récupéré sur le repo suivant : [sportSee back](https://
 
 Dans le terminal, taper la commande : `npm run dev`
 
+Pour l'instant, il n'y a que deux utilisateurs : adhérent n°12 (Karl) et adhérente n°18 (Cecilia)
+
+Pour afficher le tableau de bord d'analytics, **il faut rentrer le numéro d'adhérent.e**.
+
 Par défaut le site est en mode développement et utilise les données mockées. 
 
 #### Pour tester l'utilisation du back-end :
 * Il faut lancer celui-ci (soit avec docker, soit en le clonant puis en utilisant la commande `yarn dev`).
 
-* Aller dans 'src/callData/CallData.tsx' et remplacer 'import.meta.env.PROD' par 'import.meta.env.DEV'
+* soit aller dans 'src/callData/CallData.tsx' et remplacer 'import.meta.env.PROD' par 'import.meta.env.DEV'
+* soit aller sur le [site déployé](https://maxew33.github.io/oc-12-sportsee-test/)
 
 ## Ressources
 
