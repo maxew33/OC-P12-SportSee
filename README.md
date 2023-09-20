@@ -2,21 +2,28 @@
 
 ![Logo](https://maxime-malfilatre.com/misc/logo.png)
 
+## Objectif
+
+- Intégrer des graphiques et des diagrammes avec REact pour SportSee, un tableau de bord d'analytics de sport.
+
 ## Compétences cibles
 
 -   Assurer la qualité des données d'une application
 -   Développer des éléments graphiques avancés à l'aide de bibliothèques JavaScript
 -   Interagir avec un service Web
 
-## Objectif
-
-Intégrer des graphiques et des diagrammes avec REact pour SportSee, un tableau de bord d'analytics de sport.
-
 ## Installation
 
 ### frontend
 
-Si vite n'est pas installé, dans le terminal, taper la commande : `npm i vite`
+1. Cloner le repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+2. Installer les packages
+   ```sh
+   npm install
+    ```
 
 ### backend
 
