@@ -4,13 +4,15 @@ import {Routes, Route} from 'react-router-dom'
 import LogIn from '../pages/login/LogIn'
 
 export default function Router() {
+    const basePath = process.env.BASE_URL
+
     const path = [
         {
-            path: '/',
+            path: `${basePath}`,
             element: <LogIn />,
         },
         {
-            path: '/dashboard/:id',
+            path: `${basePath}dashboard/:id`,
             element: <Dashboard />,
         },
         {

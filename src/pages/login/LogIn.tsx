@@ -8,6 +8,8 @@ export default function LogIn() {
 
     const navigate = useNavigate()
 
+    const basePath = process.env.BASE_URL
+
     const changeInput = (e: FormEvent) => {
         const target = e.target as HTMLFormElement
         target && setInputId(target.value)
@@ -15,8 +17,10 @@ export default function LogIn() {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault()
-        navigate(`dashboard/${inputId}`)
+        console.log(`${basePath}dashboard/${inputId}`)
+        navigate(`${basePath}dashboard/${inputId}`)
     }
+
     return (
         <form onSubmit={handleSubmit} className={styles.logIn}>
             <label htmlFor="inputId">Identifiant:</label>
