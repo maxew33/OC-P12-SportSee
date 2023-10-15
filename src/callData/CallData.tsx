@@ -29,7 +29,8 @@ export default class CallData {
     }
 
     async getUserActivity() {
-        return import.meta.env.PROD
+        // return import.meta.env.PROD
+        return import.meta.env.DEV
             ? fetch(this._url + '/activity')
                   .then((res) => {
                       if (res.ok) {
@@ -48,7 +49,8 @@ export default class CallData {
     }
 
     async getUserSessions() {
-        return import.meta.env.PROD
+        // return import.meta.env.PROD
+        return import.meta.env.DEV
             ? fetch(this._url + '/average-sessions')
                   .then((res) => {
                       if (res.ok) {
@@ -67,7 +69,8 @@ export default class CallData {
     }
 
     async getUserPerformance() {
-        return import.meta.env.PROD
+        // return import.meta.env.PROD
+        return import.meta.env.DEV
             ? fetch(this._url + '/performance')
                   .then((res) => {
                       if (res.ok) {
