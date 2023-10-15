@@ -11,8 +11,8 @@ export default class CallData {
     }
 
     async getUserData() {
-        return import.meta.env.PROD
-        // return import.meta.env.DEV
+        // return import.meta.env.PROD
+        return import.meta.env.DEV
             ? fetch(this._url)
                   .then((res) => {
                       if (res.ok) {
