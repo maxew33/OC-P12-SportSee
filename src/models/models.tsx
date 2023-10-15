@@ -6,7 +6,8 @@ import UserMainData from './UserMainData'
 
 export default async function Models(id: string) {
 
-    const url = 'http://localhost:3000/user/' + id
+    const url = '/user/' + id
+    console.log(url)
     const callData = new CallData(url)
     const userData = await callData.getUserData()
 

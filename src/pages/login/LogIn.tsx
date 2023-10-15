@@ -4,7 +4,7 @@ import RunnigMan from '../../assets/runningMan.svg'
 import styles from './LogIn.module.css'
 
 export default function LogIn() {
-    const [inputId, setInputId] = useState('')
+    const [inputId, setInputId] = useState('12')
 
     const navigate = useNavigate()
 
@@ -17,13 +17,12 @@ export default function LogIn() {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault()
-        console.log(`${basePath}dashboard/${inputId}`)
         navigate(`${basePath}dashboard/${inputId}`)
     }
 
     return (
         <form onSubmit={handleSubmit} className={styles.logIn}>
-            <label htmlFor="inputId">Identifiant:</label>
+            {/* <label htmlFor="inputId">Identifiant:</label>
             <div className={styles.inputWrapper}>
                 <img src={RunnigMan} alt="submit" />
                 <input
@@ -34,11 +33,16 @@ export default function LogIn() {
                     onInput={(e) => changeInput(e)}
                     placeholder="n° d'adhésion"
                 />
-            </div>
+            </div> */}
+
+            {/* <button type="submit" className={styles.button}>
+                envoyer
+            </button> */}
 
             <button type="submit" className={styles.button}>
                 envoyer
             </button>
+            
         </form>
     )
 }
